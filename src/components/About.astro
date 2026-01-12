@@ -1,0 +1,199 @@
+---
+const focusAreas = [
+  {
+    icon: "01",
+    title: "Technology",
+    description: "Advancing open-source projects and cutting-edge research in software and hardware."
+  },
+  {
+    icon: "02",
+    title: "Education",
+    description: "Providing resources, workshops, and mentorship for aspiring developers and engineers."
+  },
+  {
+    icon: "03",
+    title: "Community",
+    description: "Building inclusive spaces where innovators collaborate and share knowledge."
+  }
+];
+---
+
+<section id="about" class="about section">
+  <div class="container">
+    <div class="about-header">
+      <span class="section-tag">// about</span>
+      <h2>Empowering Innovation<br /><span class="text-accent">Through Technology</span></h2>
+      <p class="about-intro">
+        WxYZ Foundation is a non-profit organization committed to pushing the boundaries 
+        of what's possible. We believe in the power of technology to transform lives 
+        and create a more equitable future.
+      </p>
+    </div>
+    
+    <div class="focus-grid">
+      {focusAreas.map((area) => (
+        <div class="focus-card">
+          <div class="focus-icon">{area.icon}</div>
+          <h3 class="focus-title">{area.title}</h3>
+          <p class="focus-description">{area.description}</p>
+        </div>
+      ))}
+    </div>
+    
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Projects Funded</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">10K+</span>
+        <span class="stat-label">Community Members</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">25</span>
+        <span class="stat-label">Countries Reached</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: var(--bg-secondary);
+    position: relative;
+  }
+
+  .about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+  }
+
+  .about-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 1rem;
+    text-transform: lowercase;
+  }
+
+  .about-header h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-intro {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    margin-bottom: 4rem;
+    background: var(--border-color);
+  }
+
+  .focus-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    transition: background var(--transition-medium);
+  }
+
+  .focus-card:hover {
+    background: var(--bg-primary);
+  }
+
+  .focus-card:hover .focus-icon {
+    color: var(--accent);
+  }
+
+  .focus-icon {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    transition: color var(--transition-fast);
+  }
+
+  .focus-title {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .focus-description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .stats-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2.5rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border-color);
+  }
+
+  @media (max-width: 768px) {
+    .stats-bar {
+      gap: 2rem;
+      padding: 2rem 1.5rem;
+    }
+
+    .stat-divider {
+      display: none;
+    }
+
+    .stat {
+      flex: 1 1 100px;
+    }
+  }
+</style>

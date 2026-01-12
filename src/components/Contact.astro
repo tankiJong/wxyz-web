@@ -1,0 +1,149 @@
+---
+---
+
+<section id="contact" class="contact section">
+  <div class="container">
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <span class="section-tag">// contact</span>
+        <h2>Let's Build<br /><span class="text-accent">Together</span></h2>
+        <p class="contact-description">
+          Whether you're interested in partnering, contributing, or just want to say hello — 
+          we'd love to hear from you.
+        </p>
+        
+        <div class="contact-links">
+          <a href="mailto:hello@wxyz.foundation" class="contact-link">
+            <span class="contact-link-arrow">→</span>
+            <span>hello@wxyz.foundation</span>
+          </a>
+          <a href="https://github.com/wxyz-foundation" class="contact-link" target="_blank" rel="noopener">
+            <span class="contact-link-arrow">→</span>
+            <span>github.com/wxyz-foundation</span>
+          </a>
+          <a href="https://twitter.com/wxyzfoundation" class="contact-link" target="_blank" rel="noopener">
+            <span class="contact-link-arrow">→</span>
+            <span>@wxyzfoundation</span>
+          </a>
+        </div>
+      </div>
+      
+      <form class="contact-form" onsubmit="return false;">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us what you're working on..." required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-full">
+          <span>Send Message</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    position: relative;
+    background: var(--bg-primary);
+  }
+
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 1rem;
+    text-transform: lowercase;
+  }
+
+  .contact-info h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-description {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .contact-link:hover {
+    color: var(--accent);
+  }
+
+  .contact-link-arrow {
+    color: var(--accent);
+    transition: transform var(--transition-fast);
+  }
+
+  .contact-link:hover .contact-link-arrow {
+    transform: translateX(3px);
+  }
+
+  .contact-form {
+    background: white;
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    text-transform: lowercase;
+  }
+
+  .btn-full {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 900px) {
+    .contact-wrapper {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+</style>
